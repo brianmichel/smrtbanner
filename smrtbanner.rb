@@ -3,7 +3,7 @@ require 'haml'
 
 get '/' do
   puts "CATS"
-  haml :index
+  haml :index, :locals => {:appId => 552293383, :appURL => "none"}
 end
 
 post '/' do

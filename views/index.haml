@@ -1,0 +1,16 @@
+!!!
+%html
+ %head
+  %meta{"name" => "apple-itunes-app", "content" => "app-id=#{appId ? appId : 552293383}" + (appURL ? ", app-argument=#{appURL}" : ", app-argument=none")}
+  %title="SMRT BANNER"
+ %body
+  %form{:id => "app", :action => "/", :method => "post"}
+   %fieldset
+    %ul
+     %li
+      %label{:for => "appId"} ID:
+      %input{:type => "text", :name => "appId", :class => "text", :value => appId}
+     %li
+      %label{:for => "appURL"} Additional URL:
+      %input{:type => "text", :name => "appURL", :class => "text", :value => appURL}
+    %input{:type => "submit", :value => "Make!", :class => "button"}

@@ -1,17 +1,14 @@
 require 'sinatra'
 require 'haml'
 
+set :public_folder, 'public'
+
 get '/' do
   puts "CATS"
-  haml :index, :locals => {:appId => 552293383, :appURL => "none"}
+  erb :index, :locals => {:appId => 552293383, :appURL => "none"}
 end
 
 post '/' do
   puts params[:appId]
-  haml :index, :locals => {:appId => params[:appId], :appURL => params[:appURL]}
-end
-
-get '/url/:appId/:appURL' do
-  puts params[:appId]
-  puts params[:appURL]
+  erb :index, :locals => {:appId => params[:appId], :appURL => params[:appURL]}
 end
